@@ -1,0 +1,40 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/flowtype", "prettier/react"],
+  "plugins": ["flowtype", "detox"],
+  "globals": {
+    "__DEV__": false,
+    "FormData": false,
+    "fetch": false
+  },
+  "env": {
+    "es6": true,
+    "jest": true,
+    "mocha": true,
+    "detox/detox": true
+  },
+  "rules": {
+    "arrow-parens": 0, // Does not work with Flow generic types.
+    "global-require": 0, // Used by webpack isomorphic tools and React Native.
+    "import/first": 0, // Sorts by atom/sort lines natural order.
+    "import/prefer-default-export": 0, // No. Actions can have just one action.
+    "no-confusing-arrow": 0, // This rule is confusing.
+    "no-mixed-operators": 0, // Prettier ftw.
+    "no-nested-ternary": 0, // Nice for JSX.
+    "no-param-reassign": 0, // We love param reassignment. Naming is hard.
+    "no-restricted-syntax": 2, // We are going are gonna to be functional
+    "no-console": 2,
+    "camelcase": 0, // Relay generated flow types
+    "indent": 0, // Prettier ftw.
+    "react/forbid-prop-types": 0, // Flow ftw.
+    "react/jsx-filename-extension": 0, // No, JSX belongs to .js files.
+    "react/jsx-closing-bracket-location": 0, // Prettier ftw.
+    "react/jsx-indent": 0, // Prettier ftw.
+    "react/jsx-indent-props": 0, // Prettier ftw.
+    "react/jsx-wrap-multilines": 0,
+    "react/no-unused-prop-types": 0, // Este is going to use Flow types.
+    "react/sort-comp": 0,
+    "react/require-default-props": 0, // Checked by flowtype.
+    "react/default-props-match-prop-types": 0, // Checked by Flow
+    "flowtype/no-weak-types": 2
+  }
+}
